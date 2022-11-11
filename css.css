@@ -1,0 +1,167 @@
+/*
+ESPECIFIDAD
+
+!important
+-
+id
+- 
+clases
+pseudoclases
+atributos
+- 
+elementos
+pseudoclases
+
+
+METODOLOGIA BEM
+
+<div class="form">
+        <input type="text" class="form__input--uno">
+        <input type="text" class="form__input">
+        <input type="text" class="form__input">
+        <input type="text" class="form__input">
+        <input type="password" class="form__input">
+</div>
+
+__ <-- por bloques
+
+.form__input{
+    color: blue;
+}
+.form__input:first-child{
+    color: red;
+}
+.form__input--uno{
+    color: green;
+}
+
+MEDIDAS RELATIVAS
+DEM
+EM 
+
+1 EM ---> 16PX  (APROX)  <--- Se ereda del valor de la caja contenedora, si <div><h2>A</h2></div> 
+div{
+    font-size: 40px
+}
+div h2{
+    font-size: 1em   <--- 40px
+}
+
+vw / vh   <--- pantalla 
+
+
+Text 
+font-size ---> tamaño
+font-family ---> tipografia
+line-height: 2    1/2  para arriba y para abajo
+font-weight  ---> grosor
+
+NORMALIZE.CSS
+Descargarlo para sacar los estilos default que traen los navegadores
+*{
+box-sizing: border-box;   ---> para que no se mueva
+padding: 0;
+margin: 0;
+}
+img{
+    max-width:  100vw
+}
+
+TEORIA DE CAJAS:
+
+en bloque, por defecto, siempre van a tener el width del total del ancho que la contiene
+
+en linea, por defecto, siempre van a tener el width del total del ancho del contenido
+
+Para cambiar esto ---> display
+
+a los elementos en linea no se les puede dar height, por ejemplo
+
+padding: eje y(top, bottom), eje x(right, left)
+padding: top rigth bottom left
+
+si no defino el izquierdo, pero si el derecho, se le da a la izquierda el valor de la derecha
+
+box sizing: content-box  --> la caja muta el tamaño con bordes o demas
+box-sizing: borderbox
+
+selector1, selector2{
+    reglas
+}
+margin auto --> centra elementos bloques y no posicionados
+
+BOX MODEL ---> CONTENT ---> PADDING ---> BORDER ----> MARGIN
+
+box shadow -->  1. eje x      2. eje y    3. tamaño desenfoque    4. borde   5. color
+text shadow -->  1. eje x      2. eje y    3. tamaño desenfoque    4. color
+transform: rotate(-45deg)
+
+otline ---> propiedad acortada ---> generarnos un borde sin afectar a las cajas, existe pero no se encuentra en el DOM
+sirve para localizar elementos, no afecta el contenido 
+
+POSITION  --> Posicionar los elementos --> adquiere nuevas propiedades
+Que un elemento este posicionado quiere decir q va a afectar el flujo del html, el orden, primero algo dsps otra y asi sucesivamente
+
+zindex ---> en el eje z los ordena, el valor mas alto de zindex va a ser el q aparezca entero, esto es asi unicamente cuando estan posicionados, importa el orden de como fueron cread
+z-index ---> dejar 50 espacios
+Tiene problema entre padres e hijos ---> el hijo no puede estar por debajo del padre, solo se puede no definiendolo en el padre, y dandole un <-index: -1 al hijo 
+
+
+
+STATIC  --> No esta posicionado
+
+RELATIVE  --> Le da propiedades, top left right bottom, conseva su espacio     propiedades top y left son las mas importantes
+se puede mover de su lugar, pero es "relativo", ya que el espacio seguira estando reservado y sus puntos de referencia seran a raiz de este espacio reservado
+
+ABSOLUTE --> a diferencia del absolute, puede moverse de su lugar y su espacio no queda reservado y sus puntos de referencia seran
+los margenes de la pantalla (viewport) ATENCION!!, si esta dentro de un contenedor y el mismo esta static, es decir que no esta posicionado, el punto de referencia sera donde estaba originalmente, pero a la hora de modificar el top left right o bottom sera como dije antes, el viewport, A NO SER QUE EL CONTENEDOR ESTE POSICIONADO. El temaño de la caja se ajusta al contenido.
+top 0
+left 0
+right 0
+bottom 0
+margin auto 
+y se sentraria  
+
+
+FIXED exactamente igual que absolute pero queda fijo en un lugar
+
+
+STICKY fixed y guarda el espacio como el relative, cuando nos encontramos con el
+
+
+
+PROPIEDAD DISPLEY --> modifica comportamiento de la caja
+
+BLOCK -> OCUPAN TODA LA LINEA
+INLINE -> OCUPAN LO Q SON
+INLINE-BLOCK -> Q SE COMPORTE COMO BLOQUE PERO PERO Q EL TAMAÑO SEA DE ACUERDO AL CONTENIDO
+
+FLEX 
+GRID
+---------------
+
+OVER-FLOW
+Es lo q sobra, es decir sobresale de la pantalla (cuando esta, aparece la barra de scrollear)
+
+overflow: visible(default)
+overflow: auto(scroll dentro del contenedor)
+overflow: scroll(pone la barra de scroll se necesite si o no)
+overflow: hidden(esconde)
+overflow es un short -> overflow-x / overflow-y  
+
+
+FLOAT --> float right / left   texto q flota + imagen 
+ 
+PSEUDO-ELEMENTOS:   <--- se aplica a un elemento
+
+::first-line  | no funciona en inline (modifica la primera linea)
+::first-letter | no funciona en inline (modifica la primera letra)
+::placeholder (modifica el placeholder de los input)
+::selection (modifica la selection del mouse)
+::after (crea un hijo del elemento al q le aplicamos la pseudo clase y necesita la prop content)
+::before (crea un hijo del elemento al q le aplicamos la pseudo clase y necesita la prop content)
+crean un texto antes o despues de un elemento y no pertenecen al DOM aunq se ven
+
+
+
+*/
